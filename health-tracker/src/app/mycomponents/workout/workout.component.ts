@@ -55,4 +55,8 @@ export class WorkoutComponent implements OnInit {
     const index =this.workouts.indexOf(workout);
     this.workouts.splice(index,1);
   }
+  addWorkout(workout:Workouts){
+    console.log(workout);
+    this.workouts.push(workout);
+  }
 }

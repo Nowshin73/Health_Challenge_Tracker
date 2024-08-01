@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Workouts } from 'src/app/Workouts';
 
 @Component({
   selector: 'app-add-workout',
@@ -6,8 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-workout.component.css']
 })
 export class AddWorkoutComponent implements OnInit {
-
-  constructor() { }
+  name:string;
+  time:number;
+  type:number;
+  @Output() workoutAdd: EventEmitter<Workouts> = new EventEmitter();
+  constructor() { 
+    const workout = {
+      sno:1,
+      name:this.name,
+      time:this.time,
+      type:this.type,
+      done:false
+    }
+    this.workoutAdd.emit(workout);
+  }
 
   ngOnInit(): void {
   }

@@ -1,18 +1,18 @@
 <h1> Add Workouts </h1>
 <div class="container-fluid">
-  <form>
+  <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="exampleInputName1">Your Name</label>
-      <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp"
+      <input type="text" [(ngModel)]="name" name="name" class="form-control" id="exampleInputName1" aria-describedby="emailHelp"
         placeholder="Enter your name">
     </div>
     <div class="form-group">
       <label for="exampleInputTime1">Time</label>
-      <input type="number" class="form-control" id="exampleInputTime1" placeholder="Enter workout time in minutes ">
+      <input type="number" [(ngModel)]="time" name="time" class="form-control" id="exampleInputTime1" placeholder="Enter workout time in minutes ">
     </div>
     <div class="form-group">
       <label for="exampleInputWType1">Workout Type</label>
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" [(ngModel)]="type" id="exampleFormControlSelect1">
         <option>Walking</option>
         <option>Running</option>
         <option>Swimming</option>

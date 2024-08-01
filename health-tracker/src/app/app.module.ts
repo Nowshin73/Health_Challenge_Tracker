@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WorkoutComponent } from './mycomponents/workout/workout.component';
 import { AddWorkoutComponent } from './mycomponents/add-workout/add-workout.component';
 import { WorkoutItemComponent } from './mycomponents/workout-item/workout-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WorkoutItemComponent } from './mycomponents/workout-item/workout-item.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
