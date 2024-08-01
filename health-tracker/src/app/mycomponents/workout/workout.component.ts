@@ -50,5 +50,9 @@ export class WorkoutComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  deleteWorkout(workout:Workouts){
+    console.log(workout);
+    const index =this.workouts.indexOf(workout);
+    this.workouts.splice(index,1);
+  }
 }

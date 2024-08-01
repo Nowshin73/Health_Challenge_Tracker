@@ -3,6 +3,6 @@
 <h1>Workouts!</h1>
 <div class="container-fluid">
     <div *ngFor="let workout of workouts">
-        <app-workout-item [workout]="workout"></app-workout-item>
+        <app-workout-item [workout]="workout" (workoutDelete)="deleteWorkout($event)"></app-workout-item>
     </div>
 </div>

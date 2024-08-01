@@ -1,8 +1,8 @@
-<div class="my-3">
+<div class="my-3 card p-5" style="width: 18rem;">
     <h3>Workout {{workout.sno}} </h3>
     <p>Name: {{workout.name}}</p>
     <p>Workout time: {{workout.time}} </p>
     <p>Workout type: {{workout.type}} </p>
     <p>Workout Completed: {{workout.done}} </p>
-
+<button class="btn btn-danger" (click)="onClick(workout)" >Delete</button>
 </div>
