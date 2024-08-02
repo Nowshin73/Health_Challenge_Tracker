@@ -9,6 +9,7 @@ import {  Workouts } from 'src/app/Workouts';
 export class WorkoutItemComponent implements OnInit {
   @Input() workout: Workouts;
   @Output() workoutDelete: EventEmitter<Workouts> = new EventEmitter();
+  @Output() workoutCheckbox: EventEmitter<Workouts> = new EventEmitter();
   constructor() {
    
    }
@@ -19,5 +20,8 @@ export class WorkoutItemComponent implements OnInit {
   onClick(workout: Workouts){
     this.workoutDelete.emit(workout);
     console.log("onClick has been triggered")
+  }
+  onCheckboxClick(workout: Workouts){
+    this.workoutCheckbox.emit(workout);
   }
 }

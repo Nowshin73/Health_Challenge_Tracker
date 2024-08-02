@@ -1,8 +1,12 @@
-<div class="my-3 card p-5" style="width: 18rem;">
+<div [ngClass]="{'strike my-3 card p-5': workout.done}" style="width: 18rem;">
     <h3>Workout {{workout.sno}} </h3>
     <p>Name: {{workout.name}}</p>
     <p>Workout time: {{workout.time}} </p>
     <p>Workout type: {{workout.type}} </p>
-    <p>Workout Completed: {{workout.done}} </p>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="onCheckboxClick(workout)">
+        <label class="form-check-label" for="exampleCheck1">Workout done</label>
+      </div>
+    
 <button class="btn btn-danger" (click)="onClick(workout)" >Delete</button>
 </div>

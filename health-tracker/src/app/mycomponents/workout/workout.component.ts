@@ -32,4 +32,10 @@ export class WorkoutComponent implements OnInit {
     this.workouts.push(workout);
     localStorage.setItem("workouts",JSON.stringify(this.workouts));
   }
+  toggleWorkout(workout:Workouts){
+    console.log(workout);
+    const index =this.workouts.indexOf(workout);
+    this.workouts[index].done = !this.workouts[index].done;
+    localStorage.setItem("workouts",JSON.stringify(this.workouts));
+  }
 }

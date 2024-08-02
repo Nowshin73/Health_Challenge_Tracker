@@ -1,9 +1,9 @@
-<app-add-workout (workoutAdd)="addWorkout($event)"></app-add-workout>
+<app-add-workout (workoutAdd)="addWorkout($event)" ></app-add-workout>
 
 <h1>Workouts!</h1>
 <div class="container-fluid" *ngIf="this.workouts.length===0; else elseblock" >No workouts available </div>
 <ng-template #elseblock>
     <div *ngFor="let workout of workouts">
-        <app-workout-item [workout]="workout" (workoutDelete)="deleteWorkout($event)"></app-workout-item>
+        <app-workout-item [workout]="workout" (workoutDelete)="deleteWorkout($event)" (workoutCheckbox)="toggleWorkout($event)"></app-workout-item>
     </div>
 </ng-template>
