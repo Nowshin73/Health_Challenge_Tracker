@@ -1,4 +1,4 @@
-Health Tracker is a Angular project. 
+##Health Tracker is a Angular project. 
 # Adding Workouts
 # Deleting Workouts
 # Saving Workouts in a localhost
