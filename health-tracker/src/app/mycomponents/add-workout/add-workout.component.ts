@@ -9,7 +9,8 @@ import { Workouts } from 'src/app/Workouts';
 export class AddWorkoutComponent implements OnInit {
   name:string;
   time:number;
-  type:number;
+  type:string;
+ 
   @Output() workoutAdd: EventEmitter<Workouts> = new EventEmitter();
   constructor() { 
   }
@@ -21,9 +22,12 @@ export class AddWorkoutComponent implements OnInit {
       name:this.name,
       time:this.time,
       type:this.type,
-      done:false
+      undone:true
     }
+
+    console.log(workout);
     this.workoutAdd.emit(workout);
+    console.log(workout);
    }
 
 }

@@ -1,9 +1,14 @@
-<app-add-workout (workoutAdd)="addWorkout($event)" ></app-add-workout>
-
-<h1>Workouts!</h1>
-<div class="container-fluid" *ngIf="this.workouts.length===0; else elseblock" >No workouts available </div>
-<ng-template #elseblock>
-    <div *ngFor="let workout of workouts">
-        <app-workout-item [workout]="workout" (workoutDelete)="deleteWorkout($event)" (workoutCheckbox)="toggleWorkout($event)"></app-workout-item>
-    </div>
-</ng-template>
+<div class="container-fluid d-flex flex-column mx-auto p-2" style="max-width: 1200px;">
+    <h1 class="text-center my-2">Welcome to Workouts!</h1>
+    <app-add-workout (workoutAdd)="addWorkout($event)"></app-add-workout>
+    <h2 class=" my-4">Workout Lists</h2>
+    <div class="container-fluid" *ngIf="this.workouts.length===0; else elseblock">No workouts available </div>
+    <ng-template #elseblock>
+        <div class="container-fluid row justify-content-center gap-5 ">
+            <div *ngFor="let workout of workouts" class="col">
+                <app-workout-item [workout]="workout" (workoutDelete)="deleteWorkout($event)"
+                    (workoutCheckbox)="toggleWorkout($event)"></app-workout-item>
+            </div>
+        </div>
+    </ng-template>
+</div>
