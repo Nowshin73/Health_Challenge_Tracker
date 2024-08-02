@@ -12,6 +12,10 @@ export class AddWorkoutComponent implements OnInit {
   type:number;
   @Output() workoutAdd: EventEmitter<Workouts> = new EventEmitter();
   constructor() { 
+  }
+  ngOnInit(): void {
+  }
+  onSubmit(){
     const workout = {
       sno:1,
       name:this.name,
@@ -20,9 +24,6 @@ export class AddWorkoutComponent implements OnInit {
       done:false
     }
     this.workoutAdd.emit(workout);
-  }
-
-  ngOnInit(): void {
-  }
+   }
 
 }
